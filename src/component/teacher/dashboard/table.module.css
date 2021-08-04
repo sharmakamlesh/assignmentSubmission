@@ -1,0 +1,18 @@
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.tableContainer div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .8rem auto;
+    border-bottom: 1px solid grey;
+    padding: .5rem 1rem;
+}
