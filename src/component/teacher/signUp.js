@@ -5,6 +5,14 @@ import Button from '@material-ui/core/Button';
 
 import { makeStyles } from '@material-ui/core/styles';
 
+const style = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+}
+
+
 const useStyles = makeStyles({
     root: {
         display: 'flex',
@@ -66,6 +74,7 @@ export const TeacherSignUp = () => {
 
     return (
         <>
+        <div style={style}>
             <TextField id="outlined-basic" label="Name" variant="outlined" classes={{ root: classes.Input }} value={name} onChange={onNameChange}/>
             <TextField id="outlined-basic" label="Department" variant="outlined" classes={{ root: classes.Input }} value={dept} onChange={onDepartmentChange }/>
             <TextField id="outlined-basic" label="Email" variant="outlined" classes={{ root: classes.Input }} value={email} onChange={onEmailChange} />
@@ -80,6 +89,7 @@ export const TeacherSignUp = () => {
                 onChange={onPasswordChange}
             />
             <Button variant="contained" color="secondary" onClick={onSubmitHandler}>Submit</Button>
+            </div>
         </>
     )
 }

@@ -1,0 +1,94 @@
+POST http://localhost:3000/teacher/register
+Content-Type: application/json
+
+{
+  "name": "anamit",
+  "dept": "IT",
+  "password": "1234567",
+  "email": "namit@example.com"
+}
+
+###
+POST http://localhost:3000/student/login
+Content-Type: application/json
+
+{
+  "email": "namit@example.com",
+  "password": "124567"
+}
+
+###
+POST https://labfile.herokuapp.com/student/register
+Content-Type: application/json
+
+{
+  "name": "namit",
+  "dept": "IT",
+  "email": "namit@example.com",
+  "password": "1234567",
+  "enrollNo": "1234567",
+  "sem": "1"
+}
+
+<> 2021-08-05T231722.200.json
+
+###
+POST http://labfile.herokuapp.com/teacher/login
+Content-Type: application/json
+
+{
+  "email": "namit@example.com",
+  "password": "1234567"
+}
+
+
+###
+POST http://localhost:3000/teacher/createSubject
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbWl0QGV4YW1wbGUuY29tIiwibmFtZSI6ImFuYW1pdCIsImRlcHQiOiJJVCIsInVzZXJUeXBlIjoiVEVBQ0hFUiIsImlkIjoiNjEwNTkzYjFmNjgyZDQ1NzQ4MDY2YmFjIiwiaWF0IjoxNjI4MDE2NDA1LCJleHAiOjE2MjgwMjAwMDV9.nEHUrcVSRgheqwb2hZ6fKJ4TdafXsJdKbGqc1cNdlII
+
+{
+  "name": "CN",
+  "dept": "IT",
+  "sem": 4
+}
+
+
+###
+GET http://labfile.herokuapp.com/teacher/getAssignedSubject
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbWl0QGV4YW1wbGUuY29tIiwibmFtZSI6ImFuYW1pdCIsImRlcHQiOiJJVCIsInVzZXJUeXBlIjoiVEVBQ0hFUiIsImlkIjoiNjEwNTkzYjFmNjgyZDQ1NzQ4MDY2YmFjIiwiaWF0IjoxNjI4MjI1Mzc4LCJleHAiOjE2MjgyMjg5Nzh9.4qFq_bK41g2Blv0_0U8f_gvYoYfUxzg8h-4CYii1YBY
+
+
+###
+GET http://labfile.herokuapp.com/teacher/getAssignedSubject
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbWl0QGV4YW1wbGUuY29tIiwibmFtZSI6ImFuYW1pdCIsImRlcHQiOiJJVCIsInVzZXJUeXBlIjoiVEVBQ0hFUiIsImlkIjoiNjEwNTkzYjFmNjgyZDQ1NzQ4MDY2YmFjIiwiaWF0IjoxNjI4MTg1MDQwLCJleHAiOjE2MjgxODg2NDB9._CyUDP8Zo6o4kt_tJUMjSJTqg1Hf1Afe7nbF7YveEjQ
+
+
+###
+POST http://localhost:3000/teacher/createAssignment
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbWl0QGV4YW1wbGUuY29tIiwibmFtZSI6ImFuYW1pdCIsImRlcHQiOiJJVCIsInVzZXJUeXBlIjoiVEVBQ0hFUiIsImlkIjoiNjEwNTkzYjFmNjgyZDQ1NzQ4MDY2YmFjIiwiaWF0IjoxNjI4MTg1MDQwLCJleHAiOjE2MjgxODg2NDB9._CyUDP8Zo6o4kt_tJUMjSJTqg1Hf1Afe7nbF7YveEjQ
+Content-Type: application/json
+
+{
+"subject":"61098f371c5c123d301d3e18",
+"date":1628358824816,
+"description":"Eat properly"
+}
+
+
+
+###
+POST http://localhost:3000/teacher/assignSubject
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hbWl0QGV4YW1wbGUuY29tIiwibmFtZSI6ImFuYW1pdCIsImRlcHQiOiJJVCIsInVzZXJUeXBlIjoiVEVBQ0hFUiIsImlkIjoiNjEwNTkzYjFmNjgyZDQ1NzQ4MDY2YmFjIiwiaWF0IjoxNjI4MTg1MDQwLCJleHAiOjE2MjgxODg2NDB9._CyUDP8Zo6o4kt_tJUMjSJTqg1Hf1Afe7nbF7YveEjQ
+
+{
+"teacher":"610593b1f682d45748066bac",
+"subject":"61098f371c5c123d301d3e18"
+}
+
+
+
+
+
+

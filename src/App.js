@@ -10,33 +10,40 @@ import { AssignedSubjects} from './component/teacher/dashboard/assignedSubjects'
 import {SubmittedFiles} from './component/teacher/dashboard/submittedFiles';
 import {PreviousFiles} from './component/teacher/dashboard/previousFiles';
 import {CreateAssignment} from './component/teacher/dashboard/createAssignment'
-function App() {
-  const [token , setToken] = useState(false)
-
+const App = () => {
+    const [token , setToken] = useState('/')
+    const tokenState = useSelector(state => state.tokenReducer);
   useEffect(() => {
-    console.log('effect')
-    const data = localStorage.getItem('token')
-    const userToken = JSON.parse(data)
-    if(userToken){
-      setToken(userToken)
+      console.log('effect')
+    const tokenObj = JSON.parse(tokenState);
+
+    if(tokenState){
+        setToken(tokenObj)
+          console.log('yes it token')
+      }
+    
+      if(!tokenState){
+        setToken({
+            type: '/'
+        })
     }
 
   },[])
 
-  return (<>
-        <Route exact path='/'>
-        {token.type === 'STUDENT' && <Redirect to='/student'/>}
-        {token.type === 'TEACHER' && <Redirect to='/teacher'/>}
-        {token.type === 'HOD' && <Redirect to='/'/>}
-        <Main/>
-        </Route>
-        <Route path='/student' component={StudentDashboard} /> 
-        <Route exact path='/teacher' component={TeacherDashboard} />    
-        <Route path='/teacher/assignedSubjects'component={AssignedSubjects}/>
-        <Route path='/teacher/submitted-files'component={SubmittedFiles}/>
-        <Route path='/teacher/previous-files'component={PreviousFiles}/>
-        <Route path='/teacher/create-assignment'component={CreateAssignment}/>
-        <Redirect to='/' />
+  return (<> 
+            <Route exact path='/'>
+            {token.type === 'STUDENT' && <Redirect to='/student'/>}
+            {token.type === 'TEACHER' && <Redirect to='/teacher'/>}
+            {token.type === 'HOD' && <Redirect to='/'/>}
+            <Main/>
+            </Route>
+            <Route path='/student' component={StudentDashboard} /> 
+            <Route exact path='/teacher' component={TeacherDashboard} />    
+            <Route path='/teacher/assignedSubjects'component={AssignedSubjects}/>
+            <Route path='/teacher/submitted-files'component={SubmittedFiles}/>
+            <Route path='/teacher/previous-files'component={PreviousFiles}/>
+            <Route path='/teacher/create-assignment'component={CreateAssignment}/>
+            <Redirect to='/' />
       </>
 
   );

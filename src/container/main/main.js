@@ -58,9 +58,9 @@ const Main = () => {
                 H O D
             </Button>
         </main>
-        {studentModal && <Dialog onClose={onCloseHandler} aria-labelledby="customized-dialog-title" open={studentModal} ><StudentSignInUp/></Dialog>}
-        {teacherModal && <Dialog onClose={onCloseHandler} aria-labelledby="customized-dialog-title" open={teacherModal} ><TeacherSignInUp/></Dialog>}
-        {hodModal &&  <Dialog onClose={onCloseHandler} aria-labelledby="customized-dialog-title" open={hodModal} ><HODSignIn/></Dialog>}
+        {studentModal && <Dialog onClose={onCloseHandler} aria-labelledby="customized-dialog-title" open={studentModal} ><StudentSignInUp closeModal={onCloseHandler}/></Dialog>}
+        {teacherModal && <Dialog onClose={onCloseHandler} aria-labelledby="customized-dialog-title" open={teacherModal} ><TeacherSignInUp closeModal={onCloseHandler}/></Dialog>}
+        {hodModal &&  <Dialog onClose={onCloseHandler} aria-labelledby="customized-dialog-title" open={hodModal} ><HODSignIn closeModal={onCloseHandler}/></Dialog>}
         </>
     )
 }

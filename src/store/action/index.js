@@ -25,3 +25,10 @@ export const LogOutAction = (data) => {
        data: data
     }
 }
+
+export const tokenAction = (token) => {
+    return {
+        type: 'TOKEN',
+        payload: token
+    }
+} 

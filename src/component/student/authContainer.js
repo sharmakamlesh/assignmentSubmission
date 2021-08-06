@@ -6,7 +6,9 @@ import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 import { StudentSignUp } from './signUp';
 import StudentSignIn from './signin';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import CancelSharpIcon from '@material-ui/icons/CancelSharp';
 
 
 const useStyles = makeStyles({
@@ -14,12 +16,19 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flexStart',
-       
+        maxWidth: '650px',
         alignItems: 'center',
         backgroundColor: '#fff',
         height: '90vh'
     },
+    header : {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '.5rem .8rem',
+    },
     container :{
+        margin: '2rem auto',
         width: '60vw',
         overflow: 'hidden',
     },
@@ -28,7 +37,7 @@ const useStyles = makeStyles({
     },
 })
 
-const StudentSignInUp = () => {
+const StudentSignInUp = (props) => {
     const [isSignIn, setIsSignIn] = useState(true)
 
     const showSignIn = () => {
@@ -39,13 +48,20 @@ const StudentSignInUp = () => {
         setIsSignIn(false)
     }
 
+
     const classes = useStyles();
     return (
         <>
             <CssBaseline />
-            <DialogTitle id="customized-dialog-title">
-            Student Section
-        </DialogTitle>
+            <AppBar position="static">
+             <div className={classes.header}>
+                 <h1> Student Section</h1>
+                 <IconButton onClick={props.closeModal}>
+                 <CancelSharpIcon fontSize="large" style={{color: 'white'}}/>
+                 </IconButton> 
+             </div>
+             
+           </AppBar>
 
             <Container maxWidth="sm" classes={{root: classes.container}}>
                 <Typography component="div" classes={{ root: classes.root }}>

@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-import { isLoggedIn } from "./isLoggedIn";
+import { tokenReducer } from "./tokenReducer";
 
-export const rootReducer = combineReducers({isLoggedIn})
+export const rootReducer = combineReducers({tokenReducer})
